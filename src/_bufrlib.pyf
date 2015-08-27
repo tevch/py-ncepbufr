@@ -1800,7 +1800,8 @@ subroutine nxtwin(lun,iwin,jwin) ! in nxtwin.f
     common /bufrbmiss/ bmiss
     common /usrint/ nval,inv,val
 end subroutine nxtwin
-subroutine openbf(lunit,io,lundx) ! in openbf.f
+subroutine openbf(filename,lunit,io,lundx) ! in openbf.f
+    character*(*), intent(in) :: filename
     integer :: lunit
     character*(*) :: io
     integer :: lundx

@@ -154,35 +154,7 @@ EOF
 
 cpp $CPPFLAGS -DBUILD=NORMAL bufrlib.PRM.orig bufrlib.prm
 
-#-------------------------------------------------------------------------------
-#   Update libbufr_4.a (4-byte REAL, 4-byte INT, 64-bit compilation,
-#                          Fortran optimization level 3, C optimization level 3)
- 
-export LIB="libbufr_4.a"
-export FFLAGS=" -O2"
-export CFLAGS=" -O2 -DUNDERSCORE"
-export AFLAGS=" "
-make -f make.libbufr
-err_make=$?
-[ $err_make -ne 0 ]  && exit 99
- 
-#-------------------------------------------------------------------------------
-#   Update libbufr_8.a (8-byte REAL, 8-byte INT, 64-bit compilation,
-#                          Fortran optimization level 3, C optimization level 3)
- 
-export LIB="libbufr_8.a"
-export FFLAGS=" -O2 -fdefault-real-8 -fdefault-integer-8"
-export CFLAGS=" -O2 -DUNDERSCORE -DF77_INTSIZE_8"
-export AFLAGS=" "
-make -f make.libbufr
-err_make=$?
-[ $err_make -ne 0 ]  && exit 99
-
-#-------------------------------------------------------------------------------
-#   Update libbufr_d.a (8-byte REAL, 4-byte INT, 64-bit compilation,
-#                          Fortran optimization level 3, C optimization level 3)
-
-export LIB="libbufr_d.a"
+export LIB="libbufr.a"
 export FFLAGS=" -O2 -fdefault-real-8"
 export CFLAGS=" -O2 -DUNDERSCORE"
 export AFLAGS=" "

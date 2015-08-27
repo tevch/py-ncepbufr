@@ -6,7 +6,7 @@ import os, sys
 
 ext = Extension(name          = '_bufrlib',
                 sources       = ['src/_bufrlib.pyf'],
-                libraries     = ['bufr_d'],
+                libraries     = ['bufr'],
                 library_dirs  = ['src'])
 
 
