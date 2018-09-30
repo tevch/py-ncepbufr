@@ -141,12 +141,13 @@ SHELL=/bin/sh
 
 .f.a:
 	\$(FC) -c \$(FFLAGS) \$<
-	ar -ruv \$(AFLAGS) \$@ \$*.o
+	#ar -ruv \$(AFLAGS) \$@ \$*.o
+	ar -rUv \$(AFLAGS) \$@ \$*.o
 	rm -f \$*.o
 
 .c.a:
 	\$(CC) -c \$(CFLAGS) \$<
-	ar -ruv \$(AFLAGS) \$@ \$*.o
+	ar -rUv \$(AFLAGS) \$@ \$*.o
 	rm -f \$*.o
 EOF
 
