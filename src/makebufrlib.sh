@@ -30,6 +30,8 @@ CPPFLAGS=" -P -traditional-cpp"
 
 cat > endiantest.c << ENDIANTEST
 
+#include <stdio.h>
+
 void fill(p, size) char *p; int size; {
 	char *ab= "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	int i;
@@ -62,7 +64,7 @@ int cprop() {
 	return byte_size;
 }
 
-main()
+int main()
 {
 	int byte_size;
 
